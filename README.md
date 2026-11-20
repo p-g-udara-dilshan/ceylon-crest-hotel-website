@@ -6,19 +6,10 @@ A responsive, editorial-style boutique hotel website concept created with **HTML
 
 ## 🔗 Project links
 
-- **Live website:** `ADD_YOUR_LIVE_WEBSITE_URL_HERE` — replace this after deployment.
-- **GitHub repository:** https://github.com/p-g-udara-dilshan/ceylon-crest-hotel-website *(proposed repository URL; available after you create/publish it)*
+- **GitHub repository:** https://github.com/p-g-udara-dilshan/ceylon-crest-hotel-website *
 - **Developer GitHub:** https://github.com/p-g-udara-dilshan
 
-## 📸 Screenshots
 
-### Homepage overview
-
-![Ceylon Crest homepage, room cards, experiences and gallery](assets/screenshots/homepage-full.png)
-
-### Guest information assistant
-
-![Rule-based guest-information chat interface](assets/screenshots/guest-information-chat.png)
 
 ## ✨ Main features
 
@@ -116,4 +107,3 @@ You can also follow `VERCEL-HOSTING.md` for an alternative static-hosting workfl
 
 Frontend portfolio project — **Udara Dilshan**  
 GitHub: https://github.com/p-g-udara-dilshan  
-Portfolio: https://udara-dilshan-portfolio.pages.dev/
