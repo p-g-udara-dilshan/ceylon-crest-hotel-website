@@ -1,0 +1,350 @@
+/*
+  Ceylon Crest — Editorial Edition
+  Layout refinements authored with vanilla CSS.
+  Keeps existing interaction hooks intact.
+*/
+:root {
+  --ink: #262c28;
+  --forest: #273f36;
+  --forest-2: #3b5146;
+  --sage: #7b837a;
+  --cream: #faf8f3;
+  --sand: #f0ede5;
+  --line: #dcd8ce;
+  --gold: #c5a077;
+  --gold-light: #ead2ae;
+  --terra: #a06c54;
+  --shadow: 0 10px 30px rgba(38,44,40,.055);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-ui: 'DM Sans', sans-serif;
+  --page: 1240px;
+}
+html {scroll-padding-top:88px}
+body {background:var(--cream);font-size:15px;color:var(--ink)}
+.container {width:min(var(--page),calc(100% - 104px))}
+h1,h2,h3 {letter-spacing:-.035em}
+h2 {font-size:clamp(3.2rem,5.15vw,5.3rem);line-height:1.02;font-weight:500}
+h1 em,h2 em,h3 em {color:inherit}
+p {line-height:1.76}
+.section-pad {padding:100px 0}
+.eyebrow {font:600 11px/1.5 var(--font-ui);letter-spacing:.13em;color:#9d6d50;gap:10px}
+.eyebrow-line {width:21px}
+.section-heading {margin-bottom:32px}
+.section-heading h2 {margin:14px 0 12px}
+.section-heading p {font-size:14px;line-height:1.65;color:#646f65}
+.button {border-radius:1px;min-height:52px;padding:13px 24px;gap:15px;font-size:13px;font-weight:700;letter-spacing:0;box-shadow:none!important;transition:background .2s, color .2s, transform .2s}
+.button:hover {transform:translateY(-1px)}
+.button-brass {background:#d8b28a;color:#293029}
+.button-green {background:#2a493c}
+.button-small {min-height:43px}
+.underlined-link {font-size:13px;letter-spacing:0;font-weight:700;padding-bottom:7px;gap:13px}
+.underlined-link:hover {gap:18px}
+
+/* Quiet, legible navigation. */
+.site-header,.header-inner {height:84px}
+.site-header {background:rgba(16,24,21,.30);border-bottom:1px solid rgba(255,255,255,.22)}
+.site-header.scrolled,.site-header.nav-open {background:#f8f7f3;box-shadow:0 3px 18px rgba(22,30,21,.07);border-bottom:1px solid #e5e0d7;color:var(--ink)}
+.site-header.scrolled .text-nav-btn,.site-header.nav-open .text-nav-btn {color:var(--ink)}
+.site-header.scrolled .menu-toggle,.site-header.nav-open .menu-toggle {color:var(--ink)}
+.site-header.scrolled .brand-mark svg,.site-header.nav-open .brand-mark svg {stroke:var(--forest)}
+.site-header.scrolled .desktop-nav a.active,.site-header.scrolled .desktop-nav a:hover {color:#a16d4a}
+.site-header.scrolled .desktop-nav a.active:after {background:#a16d4a}
+.header-inner {gap:28px}
+.brand {min-width:222px;gap:8px}
+.brand-mark,.brand-mark svg {width:37px;height:41px}
+.brand-mark svg {stroke-width:1.65}
+.brand-copy strong {font-family:var(--font-display);font-size:32px;letter-spacing:-.04em;font-weight:600;text-transform:none}
+.brand-copy small {font-family:var(--font-body);font-size:8px;letter-spacing:.165em;margin-top:2px;opacity:.85;font-weight:600}
+.desktop-nav {gap:27px}
+.desktop-nav a {font:600 13px/1.3 var(--font-body);letter-spacing:0;opacity:.92;padding:33px 0}
+.desktop-nav a.active:after {bottom:19px;height:1.5px}
+.nav-actions {gap:9px}
+.text-nav-btn {font:600 13px var(--font-ui)}
+.site-header:not(.scrolled) .button-brass {background:#e6d0b1}
+
+/* A photographic opening — fewer effects, stronger typographic rhythm. */
+.hero {height:min(755px,86svh);min-height:625px;background:#28362f}
+.hero-media {background-position:center 54%;transform:none;animation:none;filter:saturate(.78) contrast(.95)}
+.hero-shade {background:linear-gradient(90deg,rgba(17,27,24,.80) 0%,rgba(18,29,25,.56) 38%,rgba(17,26,23,.05) 87%),linear-gradient(0deg,rgba(21,31,27,.25),transparent 44%)}
+.hero-inner {padding-top:60px;justify-content:flex-start}
+.hero-copy {max-width:610px;margin:0}
+.hero .eyebrow {color:#e4d1b6;letter-spacing:.17em}
+.hero h1 {font-size:clamp(5rem,7.35vw,8.4rem);font-weight:500;letter-spacing:-.046em;line-height:.9;margin:28px 0 28px;text-shadow:none}
+.hero h1 em {font-weight:400;color:#edd3b3;font-style:italic}
+.hero-copy>p {font-size:16px;line-height:1.75;max-width:462px;color:#f7f5e8eb;margin-bottom:29px}
+.hero-links {gap:26px}
+.hero-links .underlined-link {border-bottom-color:#d5d0c9;color:white;font-size:13px;margin:0}
+.hero-corner-label {position:absolute;right:max(52px,calc((100vw - var(--page))/2));bottom:85px;color:#fff7;letter-spacing:.11em;font-size:10px;font-weight:600}
+
+/* Booking is a useful form, not a floating gimmick. */
+.booking-strip-section {margin-top:-44px}
+.booking-strip {border:1px solid #e2ddd2;box-shadow:0 12px 38px rgba(23,35,25,.09);border-radius:3px;min-height:100px;padding:10px}
+.strip-intro {width:160px;padding-left:17px;gap:9px}
+.strip-intro-icon {border:0;background:#efe9df;width:39px;height:39px;border-radius:2px}
+.strip-intro span:last-child {font-size:11px;letter-spacing:.07em;font-weight:700;line-height:1.4}
+.strip-field {padding:0 20px;gap:8px;font-size:11px;letter-spacing:.11em}
+.strip-field input,.strip-field select {font-size:13px;font-weight:600}
+.strip-submit {min-height:62px;font-size:12px;margin-left:8px}
+
+/* Rooms first — the information visitors actually came for. */
+.rooms-section {background:#faf8f3;padding-top:100px;padding-bottom:103px}
+.rooms-section .section-heading h2 {max-width:660px}
+.rooms-section .section-heading h2 em {font-style:italic;color:var(--forest-2)}
+.room-grid {gap:22px}
+.room-card {background:transparent;border:1px solid #ddd8ce;transition:none}
+.room-card:hover {transform:none;box-shadow:none}
+.room-card-image {height:285px;background:#d1cdc1}
+.room-card-image img {filter:saturate(.83);transition:transform .5s}
+.room-card:hover .room-card-image img {transform:scale(1.025)}
+.room-view {border-radius:2px;width:39px;height:39px;bottom:0;right:0;background:#f8f7f2;box-shadow:none}
+.room-content {padding:23px 22px 23px}
+.room-top h3 {font-size:33px;font-weight:600;letter-spacing:-.02em}
+.room-content>p {font-size:13px;min-height:54px;line-height:1.7;margin:11px 0 19px;color:#5b665d}
+.room-meta {gap:17px;padding-bottom:14px}
+.room-meta span {font-size:12px;color:#46544a}
+.room-meta .icon {color:#707e73}
+.room-bottom {padding-top:17px}
+.room-bottom>span {font:600 10px/1.7 var(--font-body);letter-spacing:.07em}
+.room-bottom strong {font-size:18px;color:#283d33;font-weight:700}
+.room-bottom small {font-size:11px}
+.link-arrow {width:39px;height:39px;border-radius:2px}
+.rooms-footnote {margin-top:18px}
+.rooms-footnote span:first-child {font-size:11px;line-height:1.6}
+
+/* Story resembles an editorial spread, not a card collage. */
+.intro-section {background:#eeeae1;padding:110px 0}
+.intro-grid {grid-template-columns:1.01fr .99fr;gap:clamp(50px,7vw,108px)}
+.intro-image-stack {padding:0}
+.intro-main-photo {height:495px}
+.intro-main-photo img {filter:saturate(.76);object-position:center}
+.intro-image-stack:hover .intro-main-photo img {transform:none}
+.intro-small-photo {display:none}
+.intro-copy h2 {margin:17px 0 19px}
+.intro-copy h2 em {color:#7f6753}
+.intro-copy .lead {font-size:27px;font-weight:500;line-height:1.3;margin-bottom:15px}
+.intro-copy>p:not(.lead) {font-size:14px;line-height:1.85;color:#556057}
+.intro-copy .underlined-link {margin-top:20px}
+
+.fullbleed-quote {min-height:410px}
+.fullbleed-quote>img {filter:saturate(.8)}
+.fullbleed-shade {background:linear-gradient(90deg,rgba(21,30,25,.79),rgba(21,30,25,.35) 58%,transparent)}
+.fullbleed-quote h2 {font-size:clamp(3.5rem,6.3vw,6.1rem);line-height:1.04;max-width:720px;margin:17px 0 18px}
+.fullbleed-quote h2 em {color:#ecd1ab}
+.fullbleed-quote p {font-size:14px;color:#f7f4e9}
+
+/* Three different moments with consistent captions. */
+.experiences-section {background:#faf8f3}
+.experience-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:initial;gap:20px}
+.exp-card,.exp-card.exp-tall {grid-row:auto;min-height:450px}
+.exp-card img {height:100%;filter:saturate(.82)}
+.exp-card:after {background:linear-gradient(0deg,rgba(18,28,23,.72),rgba(18,28,23,0) 75%)}
+.exp-content {left:25px;right:25px;bottom:25px}
+.exp-content span {font-size:10px;letter-spacing:.12em;color:#f1e7d6}
+.exp-content h3,.exp-card:not(.exp-tall) .exp-content h3 {font-size:43px;line-height:1.02;font-weight:500;margin:10px 0}
+.exp-content h3 em {color:inherit}
+.exp-content p {font-size:12px;line-height:1.6}
+
+.details-ribbon {background:#ebe9e1;border-top:1px solid #dbd8d0;border-bottom:1px solid #dbd8d0;padding:26px 0}
+.details-grid>div {gap:4px;border-color:#d0cdc3}
+.details-icon {font-size:25px;height:31px;color:#566b59}
+.details-grid strong {font:700 13px var(--font-body)}
+.details-grid small {font-size:11px;color:#6b716a}
+
+.gallery-section {background:#faf8f3}
+.gallery-grid {gap:9px;grid-template-rows:230px 230px}
+.gallery-item img {filter:saturate(.84)}
+.gallery-item:hover img {transform:scale(1.02)}
+.gallery-expand {border-radius:2px;opacity:1;transform:none}
+
+/* Explain that this is an enquiry workflow. */
+.planning-section {background:#e9e6dc;padding:83px 0 85px;border-top:1px solid #dedbd1;border-bottom:1px solid #dedbd1}
+.planning-inner {display:grid;grid-template-columns:1.06fr 1.9fr;gap:24px 65px;align-items:start}
+.planning-head h2 {margin:13px 0 15px;font-size:clamp(2.8rem,4.6vw,4.2rem)}
+.planning-head h2 em {color:#677663}
+.section-kicker {font:700 11px var(--font-body);letter-spacing:.13em;color:#956b51}
+.planning-head p {font-size:14px;color:#657067;max-width:300px;margin-bottom:0}
+.planning-list {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:12px 0 0;margin:0;list-style:none}
+.planning-list li {border-top:1px solid #adb5aa;padding-top:17px}
+.planning-list li>span {font:600 12px var(--font-body);color:#88694d}
+.planning-list strong {display:block;margin:12px 0 8px;font-size:14px}
+.planning-list p {font-size:12px;line-height:1.65;color:#667067;margin:0}
+.planning-inner>.button {grid-column:2;justify-self:start;margin-top:0}
+
+.faq-section {background:#f7f5ef}
+.faq-grid {gap:110px}
+.faq-list summary {font-size:14px;line-height:1.4;font-weight:600;padding:21px 0}
+.faq-list details p {font-size:13px;line-height:1.75}
+.last-cta {background:#304c40;padding:77px 0}
+.last-cta:before {display:none}
+.last-cta-inner {gap:44px}
+.last-cta h2 {font-size:clamp(3rem,5vw,4.9rem);margin:9px 0}
+.last-cta h2 em {color:#e7cdaa}
+.last-cta p {line-height:1.6}
+.site-footer {background:#20362d;padding-top:64px}
+.footer-main {padding-bottom:57px}
+.footer-col h4 {font-size:10px;letter-spacing:.13em;margin-bottom:9px}
+.footer-col>a,.footer-link {font-size:13px;line-height:1.5}
+.footer-brand>p {font-size:13px}
+.footer-bottom small,.footer-bottom a {font-size:11px}
+
+/* Interactive components should feel like normal booking tools. */
+.chat-fab {height:56px;width:56px;border:1px solid rgba(255,255,255,.7);box-shadow:0 5px 22px rgba(30,40,30,.20)}
+.chat-fab .icon {height:24px;width:24px}
+.chat-notification {display:none}
+.chat-window {border-radius:5px;box-shadow:0 14px 45px rgba(19,32,24,.22)}
+.chat-head {background:#304c40}
+.chat-head span {font-size:11px}
+.chat-avatar {border-radius:2px;background:#f1e6d4;font:700 12px var(--font-body)}
+.chat-quick button {border-radius:3px;font-size:12px}
+.bubble {border-radius:6px;font-size:13px}
+.bubble-bot,.bubble-me {border-radius:6px}
+.chat-form input {border-radius:4px;font-size:13px}
+.chat-form button {border-radius:3px}
+.booking-dialog {border-radius:3px}
+.dialog-header {background:#304c40}
+.dialog-header h2 {font-size:45px}
+.booking-fields input,.booking-fields select {border-radius:3px}
+.room-dialog h2 {font-size:49px}
+
+/* Simple rooms listing. */
+.rooms-page .site-header,.rooms-page .site-header.scrolled {background:#f8f7f3;color:var(--forest);border-bottom:1px solid var(--line)}
+.rooms-page .text-nav-btn,.rooms-page .menu-toggle {color:var(--forest)}
+.rooms-page .brand-mark svg {stroke:var(--forest)}
+.rooms-page .desktop-nav a.active,.rooms-page .desktop-nav a:hover {color:#956b51}
+.inner-hero {background:#edeae2;padding:105px 0 96px}
+.inner-hero:before {display:none}
+.inner-hero h1 {font-size:clamp(4.5rem,7.5vw,7.5rem);margin:13px 0 18px}
+.inner-hero h1 em {color:#7d6753}
+.inner-hero p {font-size:15px;line-height:1.7}
+.inner-room-row {gap:85px;border-bottom:1px solid var(--line);padding:77px 0}
+.inner-room-row img {height:440px;filter:saturate(.83)}
+.inner-room-row h2 {font-size:clamp(3.8rem,6vw,5.9rem);margin:14px 0 21px}
+.inner-room-row h2 em {color:#7d6753}
+.inner-room-row p {font-size:14px;line-height:1.8}
+.inner-room-row .room-label {font-size:11px;letter-spacing:.13em}
+.inner-room-specs {font-size:12px;line-height:1.7;gap:16px}
+
+@media(max-width:1180px) {
+ .container {width:min(var(--page),calc(100% - 62px))}
+ .desktop-nav {gap:15px}
+ .brand {min-width:200px}
+ .brand-copy strong {font-size:28px}
+ .nav-actions .text-nav-btn {display:none}
+ .strip-intro {width:134px;padding-left:8px}
+ .strip-field {padding:0 13px}
+ .room-card-image {height:240px}
+ .room-content {padding:20px 18px}
+ .planning-inner {gap:22px 34px}
+}
+@media(max-width:980px) {
+ .site-header,.header-inner {height:76px}
+ .mobile-nav {top:76px;background:#f8f7f3;color:#263b31;border-top:1px solid var(--line)}
+ .mobile-nav a,.mobile-nav button {color:#263b31;border-bottom-color:#dfddd3}
+ .site-header.nav-open .brand-mark svg,.site-header.nav-open .menu-toggle {stroke:var(--forest);color:var(--forest)}
+ .menu-toggle {display:block;color:white}
+ .hero {min-height:660px;height:77svh}
+ .hero h1 {font-size:clamp(5.5rem,10vw,7.2rem)}
+ .booking-strip {display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+ .strip-intro {display:none}
+ .strip-field {padding:12px;border:0;border-bottom:1px solid var(--line)}
+ .strip-submit {grid-column:1/-1;margin:0;min-height:49px}
+ .room-card-image {height:220px}
+ .intro-grid {gap:40px}
+ .intro-main-photo {height:430px}
+ .experience-grid {gap:12px}
+ .exp-card,.exp-card.exp-tall {min-height:350px}
+ .exp-content {left:18px;right:15px;bottom:18px}
+ .exp-content h3,.exp-card:not(.exp-tall) .exp-content h3 {font-size:36px}
+ .planning-inner {grid-template-columns:1fr}
+ .planning-inner>.button {grid-column:1}
+ .faq-grid {gap:45px}
+}
+@media(max-width:700px) {
+ .container {width:calc(100% - 38px)}
+ .section-pad {padding:75px 0}
+ .site-header,.header-inner {height:69px}
+ .mobile-nav {top:69px}
+ .brand {min-width:0;gap:5px}
+ .brand-mark,.brand-mark svg {width:30px;height:37px}
+ .brand-copy strong {font-size:25px}
+ .brand-copy small {font-size:7px;letter-spacing:.1em;margin-top:0}
+ .hero {height:695px;min-height:635px;max-height:none}
+ .hero-media {background-position:65% center}
+ .hero-shade {background:linear-gradient(90deg,rgba(16,29,24,.81),rgba(16,29,24,.34) 80%),linear-gradient(0deg,rgba(16,29,24,.24),transparent)}
+ .hero-inner {align-items:center;padding-top:64px}
+ .hero-copy {margin-top:-42px}
+ .hero .eyebrow {font-size:10px;letter-spacing:.13em}
+ .hero h1 {font-size:clamp(4.7rem,16vw,6.8rem);line-height:.91;letter-spacing:-.05em;margin:20px 0 24px}
+ .hero-copy>p {font-size:14px;line-height:1.76;max-width:345px}
+ .hero-links {gap:24px;align-items:center}
+ .hero-links .button {min-height:47px;padding:13px 14px;font-size:12px}
+ .hero-links .underlined-link {font-size:12px;margin:0}
+ .hero-corner-label {right:19px;bottom:78px;font-size:9px}
+ .booking-strip-section {margin-top:-31px}
+ .booking-strip {grid-template-columns:1fr 1fr;gap:3px;padding:11px}
+ .strip-field {padding:9px}
+ .strip-field:nth-of-type(3) {grid-column:1/-1}
+ .strip-field input,.strip-field select {font-size:13px}
+ .strip-submit {min-height:45px;font-size:12px}
+ .rooms-section {padding-top:74px}
+ .section-heading h2 {font-size:clamp(3.25rem,11vw,4.7rem)}
+ .section-heading p {font-size:13px}
+ .room-grid {grid-template-columns:1fr;gap:20px}
+ .room-card-image {height:290px}
+ .room-content {padding:22px}
+ .room-top h3 {font-size:33px}
+ .room-content>p {min-height:0;font-size:13px}
+ .room-bottom strong {font-size:18px}
+ .intro-section {padding-top:77px}
+ .intro-grid {gap:34px}
+ .intro-main-photo {height:360px}
+ .intro-copy h2 {font-size:clamp(3.4rem,12vw,5rem)}
+ .intro-copy .lead {font-size:25px}
+ .intro-copy>p:not(.lead) {font-size:14px}
+ .fullbleed-quote {min-height:370px}
+ .fullbleed-quote h2 {font-size:clamp(3.2rem,11vw,4.8rem)}
+ .experience-grid {grid-template-columns:1fr;gap:17px}
+ .exp-card,.exp-card.exp-tall {min-height:340px}
+ .exp-content h3,.exp-card:not(.exp-tall) .exp-content h3 {font-size:43px}
+ .details-grid {grid-template-columns:1fr 1fr;gap:23px 0}
+ .details-grid>div:nth-child(2) {border:0}
+ .details-grid>div {padding:0 10px}
+ .gallery-grid {grid-template-columns:1fr 1fr;grid-template-rows:230px 168px 168px;gap:8px}
+ .gallery-item.gallery-large {grid-column:1/-1;grid-row:auto}
+ .planning-section {padding:65px 0}
+ .planning-head h2 {font-size:clamp(3.4rem,12vw,4.5rem)}
+ .planning-list {grid-template-columns:1fr;gap:20px;padding-top:2px}
+ .planning-list li {padding-top:13px}
+ .planning-list strong {margin:5px 0}
+ .planning-inner>.button {justify-self:stretch}
+ .faq-grid {gap:27px}
+ .faq-list summary {font-size:14px}
+ .last-cta {padding:67px 0}
+ .last-cta-inner {gap:25px}
+ .last-cta h2 {font-size:3.7rem}
+ .footer-main {grid-template-columns:1fr 1fr;gap:30px;padding-bottom:40px}
+ .footer-brand,.footer-touch {grid-column:1/-1}
+ .footer-bottom {padding-bottom:96px}
+ .chat-fab {right:17px;bottom:77px;width:53px;height:53px}
+ .chat-window {right:11px;bottom:139px;max-height:min(530px,calc(100svh - 160px))}
+ .mobile-bottom-cta button {background:#2a493c;border-radius:2px}
+ .inner-hero {padding:77px 0 75px}
+ .inner-hero h1 {font-size:clamp(4.4rem,15vw,6.2rem)}
+ .inner-room-row {gap:22px;padding:43px 0}
+ .inner-room-row img {height:290px}
+ .inner-room-row h2 {font-size:4.3rem}
+}
+@media(max-width:370px) {
+ .hero h1 {font-size:4.4rem}
+ .hero-links {gap:13px}
+ .hero-links .button {font-size:11px}
+ .room-card-image {height:245px}
+ .intro-main-photo {height:320px}
+ .last-cta h2 {font-size:3.35rem}
+}
+@media(prefers-reduced-motion:reduce) {
+ .hero-media {animation:none}
+}
+/* Content remains visible when scripting/reveal timing varies. */
+.js-ready .reveal {opacity:1;transform:none}
